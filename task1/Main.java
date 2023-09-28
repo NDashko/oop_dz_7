@@ -1,13 +1,12 @@
-import task1.Complex;
-
+package task1;
 public class Main {
     public static void main(String[] args) {
-        Complex a = new Complex(2, 3);
-        Complex b = new Complex(4, 2);
+        ComplexCalculator a = new ComplexCalculator(2, 3);
+        ComplexCalculator b = new ComplexCalculator(4, 2);
 
-        Complex sum = a.add(b);
-        Complex multi = a.multiply(b);
-        Complex div = a.divide(b);
+        ComplexCalculator sum = a.add(b);
+        ComplexCalculator multi = a.multiply(b);
+        ComplexCalculator div = a.divide(b);
         
         System.out.println("Сумма комплексных чисел: " + sum.getReal() + " + " + sum.getImaginary() + "i");
         System.out.println("Произведение комплексных чисел: " + multi.getReal() + " + " + multi.getImaginary() + "i");

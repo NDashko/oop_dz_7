@@ -1,9 +1,9 @@
 package task1;
-class Complex extends ComplexFactory{
+class ComplexCalculator extends ComplexNumber{
     private double real;
     private double imaginary;
 
-    Complex(double real, double imaginary) {
+    ComplexCalculator(double real, double imaginary) {
         this.real = real;
         this.imaginary = imaginary;
     }
@@ -16,39 +16,39 @@ class Complex extends ComplexFactory{
         return imaginary;
     }
 
-    public Complex add(Complex other) {
+    public ComplexCalculator add(ComplexCalculator other) {
         double newReal = this.real + other.real;
         double newImaginary = this.imaginary + other.imaginary;
-        return new Complex(newReal, newImaginary);
+        return new ComplexCalculator(newReal, newImaginary);
     }
     
-    public Complex multiply(Complex other) {
+    public ComplexCalculator multiply(ComplexCalculator other) {
         double newReal = this.real * other.real - this.imaginary * other.imaginary;
         double newImaginary = this.real * other.imaginary + this.imaginary * other.real;
-        return new Complex(newReal, newImaginary);
+        return new ComplexCalculator(newReal, newImaginary);
     }
 
-    public Complex divide(Complex other) {
+    public ComplexCalculator divide(ComplexCalculator other) {
         double denominator = other.real * other.real + other.imaginary * other.imaginary;
         double newReal = (this.real * other.real + this.imaginary * other.imaginary) / denominator;
         double newImaginary = (this.imaginary * other.real - this.real * other.imaginary) / denominator;
-        return new Complex(newReal, newImaginary);
+        return new ComplexCalculator(newReal, newImaginary);
     }
 
     @Override
-    Complex add(Complex a, Complex b) {
+    ComplexCalculator add(ComplexCalculator a, ComplexCalculator b) {
         
         throw new UnsupportedOperationException("Unimplemented method 'add'");
     }
 
     @Override
-    Complex multiply(Complex a, Complex b) {
+    ComplexCalculator multiply(ComplexCalculator a, ComplexCalculator b) {
         
         throw new UnsupportedOperationException("Unimplemented method 'multiply'");
     }
 
     @Override
-    Complex divide(Complex a, Complex b) {
+    ComplexCalculator divide(ComplexCalculator a, ComplexCalculator b) {
        
         throw new UnsupportedOperationException("Unimplemented method 'divide'");
     }
